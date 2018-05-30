@@ -98,6 +98,7 @@
 
 		$gradient_json = json_encode($gradient);
 		SetValue($this->GetIDForIdent("Gradient"), $gradient_json);
+		SetValue($this->GetIDForIdent("Step"), 0);
 	}
 
 	public function NextStep() {

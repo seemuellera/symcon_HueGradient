@@ -102,15 +102,24 @@
 
 	public function NextStep() {
 	
-		$newDimValue = GetValue($this->GetIDForIdent("Intensity" ) ) - $this->ReadPropertyInteger("DimStep");		
+		$gradient_json = GetValue($this->GetIDForIdent("Gradient"));
+		$step = GetValue($this->GetIDForIdent("Step"));
 
-		if ($newDimValue <= 0) {
+		$gradient = json_decode($gradient_json);
+
+		$gradient_count = count($gradient);
+
+		$stepNew = $step + 1;
+
+		if ($stepNew >= $gradient_count) {
 		
-			$this->SwitchOff();
+			$this->Stop();
 		}
 		else {
-		
-			$this->SetDim($newDimValue);
+	
+			$color = $gradient[$stepNew];
+			HUE_SetColor($this->ReadPropertyInteger("TargetId"), $color );
+			SetValue($this->GetIDForIdent("Step"), $stepNew);
 		}
 	}
 

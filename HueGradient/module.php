@@ -1,7 +1,7 @@
 <?php
 
     // Klassendefinition
-    class SleepLight extends IPSModule {
+    class HueGradient extends IPSModule {
  
         // Der Konstruktor des Moduls
         // Überschreibt den Standard Kontruktor von IPS
@@ -19,7 +19,7 @@
             	parent::Create();
 
 		// Properties
-		$this->RegisterPropertyString("Sender","SleepLight");
+		$this->RegisterPropertyString("Sender","HueGradient");
 		$this->RegisterPropertyInteger("TargetId",1);
 		$this->RegisterPropertyInteger("RefreshInterval",0);
 

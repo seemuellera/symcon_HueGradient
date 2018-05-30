@@ -89,7 +89,7 @@
 
 	}
 
-	public function Start($newColor, $steps) {
+	public function Start(int $newColor, int $steps) {
 	
 		SetValue($this->GetIDForIdent("Status"), true );	
 

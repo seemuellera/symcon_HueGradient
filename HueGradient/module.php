@@ -142,7 +142,7 @@
 		return $color;
 	}
 
-	protected function GetGradient($colorOld, $colorNew, $steps) {
+	protected function GetGradient(int $colorOld, int $colorNew, int $steps) {
 	
 		$r1=hexdec(substr($colorOld,1,2)); 
 		$g1=hexdec(substr($colorOld,3,2)); 

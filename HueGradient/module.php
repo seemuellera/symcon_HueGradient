@@ -71,7 +71,7 @@
 
 		// Add the buttons for the test center
 		$form['actions'][] = Array("type" => "Button", "label" => "Run next cycle", "onClick" => 'HUEGRADIENT_RefreshInformation($id);');
-		$form['actions'][] = Array("type" => "Button", "label" => "Start", "onClick" => 'HUEGRADIENT_Start($id,255,10);');
+		$form['actions'][] = Array("type" => "Button", "label" => "Start", "onClick" => 'HUEGRADIENT_Start($id,"0000ff",10);');
 		$form['actions'][] = Array("type" => "Button", "label" => "Stop", "onClick" => 'HUEGRADIENT_Stop($id);');
 
 		// Return the completed form
@@ -89,7 +89,7 @@
 
 	}
 
-	public function Start(int $newColor, int $steps) {
+	public function Start(string $newColor, int $steps) {
 	
 		SetValue($this->GetIDForIdent("Status"), true );	
 
@@ -139,10 +139,10 @@
 
 		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Reading color for device $targetId: $color");
 
-		return $color;
+		return dexhex($color);
 	}
 
-	protected function GetGradient(int $colorOld, int $colorNew, int $steps) {
+	protected function GetGradient(string $colorOld, string $colorNew, int $steps) {
 	
 		$r1=hexdec(substr($colorOld,1,2)); 
 		$g1=hexdec(substr($colorOld,3,2)); 

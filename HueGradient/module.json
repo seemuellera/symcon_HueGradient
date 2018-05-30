@@ -1,0 +1,11 @@
+{
+    "id": "{80A3E48B-9C96-404B-AD70-0EC336D123FE}",
+    "name": "HueGradient",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "HUEGRADIENT"
+}

@@ -144,13 +144,13 @@
 
 	protected function GetGradient($colorOld, $colorNew, $steps) {
 	
-		$r1=hexdec(substr($color1,1,2)); 
-		$g1=hexdec(substr($color1,3,2)); 
-		$b1=hexdec(substr($color1,5,2)); 
+		$r1=hexdec(substr($colorOld,1,2)); 
+		$g1=hexdec(substr($colorOld,3,2)); 
+		$b1=hexdec(substr($colorOld,5,2)); 
 
-		$r2=hexdec(substr($color2,1,2)); 
-		$g2=hexdec(substr($color2,3,2)); 
-		$b2=hexdec(substr($color2,5,2)); 
+		$r2=hexdec(substr($colorNew,1,2)); 
+		$g2=hexdec(substr($colorNew,3,2)); 
+		$b2=hexdec(substr($colorNew,5,2)); 
 
 		$diff_r=$r2-$r1; 
 		$diff_g=$g2-$g1; 

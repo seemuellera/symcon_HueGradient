@@ -139,7 +139,7 @@
 
 		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Reading color for device $targetId: $color");
 
-		return dexhex($color);
+		return dechex($color);
 	}
 
 	protected function GetGradient(string $colorOld, string $colorNew, int $steps) {

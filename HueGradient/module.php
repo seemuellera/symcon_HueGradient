@@ -153,6 +153,8 @@
 	}
 
 	protected function GetGradient(string $colorOld, string $colorNew, int $steps) {
+
+		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Starting transition from $colorOld to $colorNew in $steps steps");
 	
 		$r1=hexdec(substr($colorOld,1,2)); 
 		$g1=hexdec(substr($colorOld,3,2)); 

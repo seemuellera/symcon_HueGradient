@@ -179,7 +179,7 @@
 			array_push($colors, hexdec($color)); 
 	    	} 
 
-		array_push($colors, hexdec($colorNew)); 
+		// array_push($colors, hexdec($colorNew)); 
 		  	
   		return $colors;
 

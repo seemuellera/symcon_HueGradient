@@ -162,7 +162,7 @@
 
 		$color = GetValue($varIdColor);
 
-		$color_hex = sprintf('%06d',dechex($color) );
+		$color_hex = sprintf('%06s',dechex($color) );
 
 		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Reading color for device $targetId: $color / $color_hex");
 

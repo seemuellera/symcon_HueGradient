@@ -27,7 +27,7 @@
 		$this->RegisterVariableBoolean("Status","Status","~Switch");
 		$this->RegisterVariableString("Gradient","Gradient");
 		$this->RegisterVariableString("GradientHtml","GradientHtml","~HTMLBox");
-		$this->RegisterVariableinteger("Step",0);
+		$this->RegisterVariableinteger("Step","Step");
 
 		// Default Actions
 		$this->EnableAction("Status");
@@ -147,6 +147,11 @@
 		}
 
 		$varIdColor = IPS_GetObjectIDByName("Color",$targetId);
+
+		if (! $varIdColor) {
+		
+			$varIdColor = IPS_GetObjectIDByName("Farbe",$targetId);
+		}
 
 		if (! $varIdColor) {
 		

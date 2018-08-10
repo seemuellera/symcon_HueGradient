@@ -94,7 +94,7 @@
 	
 		SetValue($this->GetIDForIdent("Status"), true );	
 
-		$oldColor = dechex($this->getColor() );
+		$oldColor = $this->GetColor();
 		$gradient = $this->GetGradient($oldColor, $newColor, $steps);
 
 		$gradient_json = json_encode($gradient);
@@ -157,9 +157,11 @@
 
 		$color = GetValue($varIdColor);
 
-		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Reading color for device $targetId: $color");
+		$color_hex = dechex($color);
 
-		return dechex($color);
+		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Reading color for device $targetId: $color / $color_hex");
+
+		return ($color_hex);
 	}
 
 	protected function GetGradient(string $colorOld, string $colorNew, int $steps) {

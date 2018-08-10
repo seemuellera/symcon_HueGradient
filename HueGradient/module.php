@@ -103,7 +103,7 @@
 		$gradient_html = "<table>";
 		foreach ($gradient as $currentGradient) {
 		
-			$gradient_html = $gradient_html . '<tr><td bgcolor="' . $currentGradient . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>'; 
+			$gradient_html = $gradient_html . '<tr><td bgcolor="#' . $currentGradient . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>'; 
 		}
 		$gradient_html = $gradient_html . "</table>";
 		SetValue($this->GetIDForIdent("GradientHtml"), $gradient_html);
@@ -166,13 +166,13 @@
 
 		IPS_LogMessage($_IPS['SELF'], "HUEGRADIENT - Starting transition from $colorOld to $colorNew in $steps steps");
 	
-		$r1=hexdec(substr($colorOld,1,2)); 
-		$g1=hexdec(substr($colorOld,3,2)); 
-		$b1=hexdec(substr($colorOld,5,2)); 
+		$r1=hexdec(substr($colorOld,0,2)); 
+		$g1=hexdec(substr($colorOld,2,2)); 
+		$b1=hexdec(substr($colorOld,4,2)); 
 
-		$r2=hexdec(substr($colorNew,1,2)); 
-		$g2=hexdec(substr($colorNew,3,2)); 
-		$b2=hexdec(substr($colorNew,5,2)); 
+		$r2=hexdec(substr($colorNew,0,2)); 
+		$g2=hexdec(substr($colorNew,2,2)); 
+		$b2=hexdec(substr($colorNew,4,2)); 
 
 		$diff_r=$r2-$r1; 
 		$diff_g=$g2-$g1; 

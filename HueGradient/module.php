@@ -94,7 +94,7 @@
 	
 		SetValue($this->GetIDForIdent("Status"), true );	
 
-		$oldColor = $this->getColor();
+		$oldColor = dechex($this->getColor() );
 		$gradient = $this->GetGradient($oldColor, $newColor, $steps);
 
 		$gradient_json = json_encode($gradient);

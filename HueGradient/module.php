@@ -129,7 +129,7 @@
 		else {
 	
 			$color = $gradient[$stepNew];
-			HUE_SetColor($this->ReadPropertyInteger("TargetId"), $color );
+			HUE_SetColor($this->ReadPropertyInteger("TargetId"), hexdec($color) );
 			SetValue($this->GetIDForIdent("Step"), $stepNew);
 		}
 	}
@@ -188,10 +188,10 @@
 		       	$b=round($b1 + $diff_b * $factor); 
 
 		       	$color=sprintf("%02X",$r) . sprintf("%02X",$g) . sprintf("%02X",$b);
-			array_push($colors, hexdec($color)); 
+			array_push($colors, $color); 
 	    	} 
 
-		array_push($colors, hexdec($colorNew)); 
+		array_push($colors, $colorNew); 
 		  	
   		return $colors;
 

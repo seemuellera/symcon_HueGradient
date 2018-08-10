@@ -25,7 +25,8 @@
 
 		// Variables
 		$this->RegisterVariableBoolean("Status","Status","~Switch");
-		$this->RegisterVariableString("Gradient","");
+		$this->RegisterVariableString("Gradient","Gradient");
+		$this->RegisterVariableString("GradientHtml","GradientHtml","~HTMLBox");
 		$this->RegisterVariableinteger("Step",0);
 
 		// Default Actions
@@ -98,6 +99,15 @@
 
 		$gradient_json = json_encode($gradient);
 		SetValue($this->GetIDForIdent("Gradient"), $gradient_json);
+
+		$gradient_html = "<table>";
+		foreach ($gradient as $currentGradient) {
+		
+			$gradient_html = $gradient_html . '<tr><td bgcolor="' . $currentGradient . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>'; 
+		}
+		$gradient_html = "</table>";
+		SetValue($this->GetIDForIdent("GradientHtml"), $gradient_html);
+
 		SetValue($this->GetIDForIdent("Step"), 0);
 	}
 

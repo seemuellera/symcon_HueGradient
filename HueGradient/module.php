@@ -105,7 +105,7 @@
 		
 			$gradient_html = $gradient_html . '<tr><td bgcolor="' . $currentGradient . '">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>'; 
 		}
-		$gradient_html = "</table>";
+		$gradient_html = $gradient_html . "</table>";
 		SetValue($this->GetIDForIdent("GradientHtml"), $gradient_html);
 
 		SetValue($this->GetIDForIdent("Step"), 0);

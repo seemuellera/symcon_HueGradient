@@ -136,7 +136,7 @@
 			return 2;
 		}
 
-		$varIdColor = IPS_GetObjectIDByName("Farbe",$targetId);
+		$varIdColor = IPS_GetObjectIDByName("Color",$targetId);
 
 		if (! $varIdColor) {
 		
